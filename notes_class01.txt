@@ -1,0 +1,77 @@
+HTTP/1.x vs. HTTP/2 – The Difference Between the Two Protocols Explained
+       HTTP2 Vs. HTTP1 or HTTP1 Vs. HTTP2 – Let’s Understand The Two Protocols
+HTTP/1.1 has been around for more than a decade. With Google’s SPDY leading the way in 2015, the IETF (Internet Engineering Task Force) gave us HTTP/2, which introduces several features to reduce page load times. Let’s compare HTTP2 Vs. HTTP1.1 in detail.
+
+       HTTP/2 achieves faster webpage loading without performance optimizations that require extensive human efforts in terms of development. It significantly reduces the complexities that had crept into HTTP/1.1 and gives us a robust protocol which, though not without its flaws, will perhaps stand the test of time. Before making this leap forward, let’s trace our steps back to when the internet was in its infancy to understand how the different versions evolved into the current form.
+
+The Beginnings of HTTP & The Internet
+       Our story begins in 1969, with a program called Advanced Research Projects Agency Network (ARPANET). ARPANET used packet switching and allowed multiple computers to communicate with each other on a single network. However, this was just a by-product. The original intention behind ARPANET was to design a time-sharing system that allowed research institutes to share their computer resources for effective utilization of processing power.
+      
+       Before then, sometime during the 19th century, the seeds for the existence of the internet as we know it today had already been sown with the invention of electricity and the telegraph. With Morse sending the first telegraphic message in 1844 and the first cable being laid across Atlantic, the telegraph network infrastructure had spread its roots through continents and across oceans. In years to come, this would become the very foundation on which the internet was built. In 1973, Kahn and Cerf designed the TCP/IP protocol suite which was adopted by ARPANET a decade later, and from this point on, we witness the development of an interconnected network. The internet took a more recognizable form with the invention of the World Wide Web (that used HTTP as its underlying protocol) by Tim Berners-Lee and the Commercial Internet eXchange (CIX) that allowed a free exchange of TCP/IP traffic between ISPs.
+    
+Evolution of HTTP
+      HTTP (Hypertext Transfer Protocol) is a set of rules that runs on top of the TCP/IP suite of protocols and defines how files are to be transferred between clients and servers on the world wide web.
+      [https://cheapsslsecurity.com/p/wp-content/uploads/2019/07/http-protocol.png]
+
+The Protocol Serving Netizens for Over 15 Years: HTTP/1.1
+      HTTP/1.1, the first standardized version of HTTP, was introduced in 1997. It presented significant performance optimizations (over HTTP/0.9 and HTTP/1.0) and transformed the way requests and responses were exchanged between clients and servers.
+      [https://cheapsslsecurity.com/p/wp-content/uploads/2019/07/http-1-1.png]
+    
+Key Features of HTTP/1.1:
+      It was no longer required for each connection to be terminated immediately after every request was served with a response; instead, with the keep-alive header,         it was possible to have persistent connections. It allowed multiple requests/responses per TCP connection.
+      The Upgrade header was used to indicate a preference from the client that made it possible to switch to a more preferred protocol if found appropriate by the server.
+      HTTP/1.1 provided support for chunk transfers that allowed streaming of content dynamically as chunks and for additional headers to be sent after the message body. This enhancement was particularly useful in cases where values of a field remained unknown until the content had been produced. For example, when the content had to be digitally signed, it was not possible to do so before the entire content gets generated.
+      Other features that reinforced its stability were introduced such as:
+      pipelining (the second request is sent before the response to the first is adequately served)
+content negotiation (an exchange between client and server to determine the media type, it also provides the provision to serve different versions of a resource at the same URI
+
+The Protocol Designed to Speed Up Today’s Complex Web pages: HTTP/2
+       At the beginning of 2010, Google introduced an experimental protocol, SPDY, which supported multiplexing (multiple requests/responses sent and received asynchronously over a single TCP connection) but as it gained traction IETF’s HTTP Working Group came up with HTTP/2 in 2015, which is based on the SPDY protocol.
+
+Key Features of HTTP/2:
+       It introduces the concept of a server push where the server anticipates the resources that will be required by the client and pushes them prior to the client making requests. The client retains the authority to deny the server push; however, in most cases, this feature adds a lot of efficiency to the process.
+       [https://cheapsslsecurity.com/p/wp-content/uploads/2019/07/server-push-in-http-2.png]     
+       cache control (used to specify caching policies in both requests and responses)
+ 
+HTTP/1.x vs HTTP/2: A Comparative Study
+       HTTP2 Vs. HTTP1 is not a debate at all. HTTP2 is much faster and more reliable than HTTP1. HTTP1 loads a single request for every TCP connection, while HTTP2 avoids network delay by using multiplexing.
+       HTTP is a network delay sensitive protocol in the sense that if there is less network delay, then the page loads faster. However, an impressive increase in network bandwidth only slightly improves page load time. This is key to understanding the differences in performance efficiencies between the different versions of HTTP. Back in the day when people used dial up modems web pages were simple and it was the actual data transfer between the server and the client that contributed towards the largest chunk of the page load time. Today the actual downloading of resources from server takes a negligible portion of the total page load time due to the tremendous increase in bandwidth availability. It is the time taken to establish the TCP connection and making requests that impacts performance. It was initially recommended to use only two connections per hostname but today most browsers use six connections per hostname. When we talk about http vs http2 in terms of performance it is important to note that a lot of performance optimizations adopted by HTTP/1.1 introduced complexities in terms of developmental efforts as well as network congestion that HTTP/2 attempts to address.
+
+=============================================================
+Objects and its INternal Representation :
+---------------------------------------
+Objects And Its Internal Representation In JavaScript
+        Objects, in JavaScript, is it’s most important data-type and forms the building blocks for modern JavaScript. These objects are quite different from JavaScript’s primitive data-types(Number, String, Boolean, null, undefined and symbol) in the sense that while these primitive data-types all store a single value each (depending on their types).
+
+         Objects are more complex and each object may contain any combination of these primitive data-types as well as reference data-types.
+         An object, is a reference data type. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value.
+
+         Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.
+
+For Eg. If your object is a student, it will have properties like name, age, address, id, etc and methods like updateAddress, updateName, etc.
+ 
+Objects and properties
+        A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object. You access the properties of an object with a simple dot-notation:
+                                 objectName.propertyName
+       Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case sensitive. You can define a property by assigning it a value. For example, let’s create an object named myCar and give it properties named make, model, and year as follows:
+
+                           var myCar = new Object();
+                           myCar.make = 'Ford';
+                           myCar.model = 'Mustang';
+                           myCar.year = 1969;                   
+        Properties of JavaScript objects can also be accessed or set using a bracket notation (for more details see property accessors). Objects are sometimes called associative arrays, since each property is associated with a string value that can be used to access it. So, for example, you could access the properties of the myCar object as follows:
+                            myCar['make'] = 'Ford';
+                            myCar['model'] = 'Mustang';
+                            myCar['year'] = 1969;
+        An object property name can be any valid JavaScript string, or anything that can be converted to a string, including the empty string. However, any property name that is not a valid JavaScript identifier (for example, a property name that has a space or a hyphen, or that starts with a number) can only be accessed using the square bracket notation. This notation is also very useful when property names are to be dynamically determined (when the property name is not determined until runtime). Examples are as follows:                           
+
+                          var myObj = new Object(),
+                               str = 'myString',
+                               rand = Math.random(),
+                               obj = new Object();
+                          myObj.type              = 'Dot syntax';
+                          myObj['date created']   = 'String with space';
+                          myObj[str]              = 'String value';
+                          myObj[rand]             = 'Random Number';
+                          myObj[obj]              = 'Object';
+                          myObj['']               = 'Even an empty string';console.log(myObj);
